@@ -15,8 +15,8 @@ function adicionarTarefa({ titulo, descricao, concluida }) {
 //listar todas as tarefas
 function listarTarefas(filtroConcluido) {
   if (filtroConcluido !== undefined) {
-    const concliudoboole = filtroConcluido === "true";
-    return tarefas.filter((tarefa) => tarefa.concluido === concliudoboole);
+    const concliudaboolean = filtroConcluido === "true";
+    return tarefas.filter((tarefa) => tarefa.concluida === concliudaboolean);
   }
   return tarefas;
 }
