@@ -1,19 +1,19 @@
-const express = required("express");
-const morgan = required("morgan");
-const tarefasRouter = required("./routes/tarefasRoutess");
+const express = require("express");
+const morgan = require("morgan");
+const tarefasRoutes = require("./routes/tarefasRoutes");
 
 const app = express();
 const PORT = 3000;
 
-app.use(express.json());
-app.use(morgan("dev")); // as logs de requisições
+app.use(express.json()); // Permite receber JSON no body
+app.use(morgan("dev")); // Log de requisições HTTP
 
-app.use("/tarefas", tarefasRouter); //rotas de tareafs
+app.use("/api", tarefasRoutes); // Rotas da API
 
 app.get("/", (req, res) => {
-  res.send("api de tarefas rodando .-."); // rota raiz/inicial
+  res.send("apei ta funcionando mano "); // Rota raiz
 });
 
 app.listen(PORT, () => {
-  console.log(`Servidor rodando na porta ${PORT}`); //iniciando o server
+  console.log(`Server rodando em http://localhost:${PORT}`); // Start do servidor
 });

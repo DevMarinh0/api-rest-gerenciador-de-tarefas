@@ -1,16 +1,17 @@
 const { v4: uuidv4 } = require("uuid");
 const { tarefas } = require("../database/fakeDb");
 
-function adicionarTarefa({ titulo, descricao, concluido }) {
+function adicionarTarefa({ titulo, descricao, concluida }) {
   const novaTarefa = {
     id: uuidv4(),
     titulo,
     descricao,
-    concluido: boolean(concluido),
+    concluida: Boolean(concluida),
   };
   tarefas.push(novaTarefa);
   return novaTarefa;
 }
+
 //listar todas as tarefas
 function listarTarefas(filtroConcluido) {
   if (filtroConcluido !== undefined) {
