@@ -28,7 +28,7 @@ function listarTarefas(req, res) {
 // Buscar por ID
 function buscarTarefaPorId(req, res) {
   const { id } = req.params;
-  const tarefa = tarefasService.buscarPorId(id);
+  const tarefa = tarefasService.buscarTarefaPorId(id);
 
   if (!tarefa) {
     return res.status(404).json({ mensagem: "Tarefa não encontrada." });

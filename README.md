@@ -81,11 +81,37 @@ Atualiza apenas o campo concluida de uma tarefa para true.
 
 ### ❌ DELETE /api/tarefas/:id
 
-## 📌 Remove uma tarefa com base no seu ID.
+Remove uma tarefa com base no seu ID.
 
-✔️ Regras de Validação
-titulo: obrigatório e deve ter no mínimo 3 caracteres.
+## 📌 Regras de Validação
 
-descricao: obrigatório.
+✔️ `titulo`
 
-concluida: obrigatório e deve ser true ou false.
+- Obrigatório
+- Deve conter **no mínimo 3 caracteres**
+
+✔️ `descricao`
+
+- Obrigatório
+
+✔️ `concluida`
+
+- Obrigatório
+- Deve ser um valor booleano: `true` ou `false`
+
+---
+
+## 💾 Banco de Dados Simulado
+
+- Os dados são armazenados **em memória** usando um array de objetos no arquivo `fakeDb.js`.
+- As tarefas **não são persistidas** após reiniciar o servidor.
+
+---
+
+## 🛠️ Tecnologias Utilizadas
+
+- **Node.js** – Ambiente de execução JavaScript no back-end
+- **Express** – Framework para rotas e requisições HTTP
+- **Joi** – Validação de dados da requisição
+- **UUID** – Geração de identificadores únicos
+- **Morgan** – Log de requisições no terminal (opcional)
